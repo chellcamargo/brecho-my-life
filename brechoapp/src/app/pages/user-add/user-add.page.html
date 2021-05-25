@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Cadastro Usuário</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- Default Refresher -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+      
+
+    <form #fc="ngForm" (ngSubmit)="salvar(fc)">
+        <!-- Dados Pessoais -->
+        <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input type="text" [(ngModel)]='user.nome' name='nome' required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" [(ngModel)]='user.email' name='email' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
+        </ion-item>
+
+        <!-- Endereço -->
+        <ion-item>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input type="text" [(ngModel)]='user.cep' name='cep' required (change)="buscaCEP()" maxlength="8"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Endereço</ion-label>
+            <ion-input type="text" [(ngModel)]='user.logradouro' name='endereco' required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input type="text" [(ngModel)]='user.bairro' name='bairro' required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input type="text" [(ngModel)]='user.localidade' name='cidade' required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input type="text" [(ngModel)]='user.uf' name='uf' required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Numero</ion-label>
+            <ion-input type="text" [(ngModel)]='user.numero' name='numero' required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input type="text" [(ngModel)]='user.complemento' name='complemento'></ion-input>
+        </ion-item>
+
+        <!-- Seguranca -->
+        <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" [(ngModel)]='user.senha' name="senha" required #s="ngModel" minlength="6">
+            </ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="(s.invalid && s.dirty)">Senha muito curta!</ion-text>
+
+        <ion-item>
+            <ion-label position="floating">Confirmar Senha</ion-label>
+            <ion-input type="password" (ngModel)="conf" name='confsenha' required #c="ngModel"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="(s.value != c.value) && c.dirty">Senhas diferentes!</ion-text>
+
+        <!-- <ion-item> -->
+            <ion-button expand="block" type="submit" [disabled]="fc.invalid || (s.value != c.value)">Salvar</ion-button>
+            <ion-button expand="block" type="reset" color="danger">Cancelar</ion-button>
+        <!-- </ion-item> -->
+    </form>
+</ion-content>
