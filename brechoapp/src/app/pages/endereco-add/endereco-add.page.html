@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Cadastro Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Default Refresher -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    
+
+  <form #fc="ngForm" (ngSubmit)="salvar(fc)">
+     
+
+      <!-- Endereço -->
+      <ion-item>
+          <ion-label position="floating">CEP</ion-label>
+          <ion-input type="text" [(ngModel)]='user.cep' name='cep' required (change)="buscaCEP()" maxlength="8"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Endereço</ion-label>
+          <ion-input type="text" [(ngModel)]='user.logradouro' name='endereco' required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Bairro</ion-label>
+          <ion-input type="text" [(ngModel)]='user.bairro' name='bairro' required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Cidade</ion-label>
+          <ion-input type="text" [(ngModel)]='user.localidade' name='cidade' required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Estado</ion-label>
+          <ion-input type="text" [(ngModel)]='user.uf' name='uf' required></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Numero</ion-label>
+          <ion-input type="text" [(ngModel)]='user.numero' name='numero' required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Complemento</ion-label>
+          <ion-input type="text" [(ngModel)]='user.complemento' name='complemento'></ion-input>
+      </ion-item>
+
+      <
+     
+      <!-- <ion-item> -->
+          <ion-button expand="block" type="submit" [disabled]="fc.invalid ">Salvar</ion-button>
+          <ion-button expand="block" type="reset" color="danger">Cancelar</ion-button>
+      <!-- </ion-item> -->
+  </form>
+</ion-content>

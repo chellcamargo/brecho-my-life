@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user';
 import { Storage } from '@ionic/storage';
-import { UserServiceService } from '../../services/user-service.service';
+import { EnderecoService } from '../../services/endereco.service';
 import { MsgService } from '../../services/msg.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Endereco } from '../../models/endereco';
 
 @Component({
-  selector: 'app-user-add',
-  templateUrl: './user-add.page.html',
-  styleUrls: ['./user-add.page.scss'],
+  selector: 'app-endereco-add',
+  templateUrl: './endereco-add.page.html',
+  styleUrls: ['./endereco-add.page.scss'],
 })
+export class EnderecoAddPage implements OnInit {
 
-export class UserAddPage implements OnInit {
-
-  user: User = new User();
+  endereco: Endereco = new Endereco();
   key: string = null;
 
   constructor(
     private storage: Storage,
-    // public alertController: AlertController,
-    private userService: UserServiceService,
-    // public toastController: ToastController,
+    private enderecoService: EnderecoService,
     protected msg: MsgService,
     private router: Router,
     private activadeRouter: ActivatedRoute
@@ -33,9 +30,9 @@ export class UserAddPage implements OnInit {
 
   async getUser(key) {
     if (key) {
-      await this.userService.get(key).subscribe(
+      await this.enderecoService.get(key).subscribe(
         res => {
-          this.user = res;
+          this.endereco = res;
           return true;
         },
         error => {
@@ -46,16 +43,38 @@ export class UserAddPage implements OnInit {
     }
   }
 
+  buscaCEP() {
+    this.enderecoService.pegaCEP(this.endereco.cep).subscribe(
+      res => {
+        console.log(res);
+        if (res.erro) {
+          this.msg.presentToast("CEP não localizado!");
+        } else {
+          //this.user = res;
+          //this.user.cep = res.cep;
+          this.endereco.logradouro = res.logradouro;
+          this.endereco.localidade = res.localidade;
+          this.endereco.bairro = res.bairro;
+          this.endereco.uf = res.uf;
+        }
+      },
+      error => {
+        console.error(error)
+      }
+    )
+  }
+
+
   salvar() {
     try {
       this.msg.presentLoading();
       if (this.key) {
-        this.userService.update(this.user, this.key).then(
+        this.enderecoService.update(this.endereco, this.key).then(
           res => {
             console.log('Dados Salvos firebase...', res);
             this.msg.dismissLoading();
             this.msg.presentAlert('Alerta', 'Usuário atualizado.');
-            this.user = new User();
+            this.endereco = new Endereco();
             this.router.navigate(['']);
           },
           error => {
@@ -65,15 +84,12 @@ export class UserAddPage implements OnInit {
           }
         )
       } else {
-        this.userService.add(this.user).then(
+        this.enderecoService.add(this.endereco).then(
           res => {
             console.log('Dados Salvos firebase...', res);
-            this.storage.set('nome', this.user.nome);
-            this.storage.set('email', this.user.email);
-            this.storage.set('senha', this.user.senha);
             this.msg.dismissLoading();
             this.msg.presentAlert('Alerta', 'Usuário cadastrado.');
-            this.user = new User();
+            this.endereco = new Endereco();
             this.router.navigate(['']);
           },
           error => {
@@ -102,3 +118,4 @@ export class UserAddPage implements OnInit {
   }
 
 }
+
