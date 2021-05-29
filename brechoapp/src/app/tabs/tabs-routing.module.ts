@@ -27,6 +27,12 @@ const routes: Routes = [
         path: 'userAdd/:key',
         loadChildren: () => import('../pages/user-add/user-add.module').then( m => m.UserAddPageModule)
       },
+
+      {
+        path: 'user-perfil/:key',
+        loadChildren: () => import('../pages/user-perfil/user-perfil.module').then( m => m.UserPerfilPageModule)
+      },
+
       {
         path: '',
         redirectTo: '/tabs/tab1',

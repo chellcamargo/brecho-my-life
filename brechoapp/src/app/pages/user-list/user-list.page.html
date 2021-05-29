@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Loja Plus - Lista de Alunos
+      Brechó My Life - Produtos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -20,7 +20,7 @@
         <ion-item-option color="success" (click)="editar(user)">Editar</ion-item-option>
       </ion-item-options>
   
-      <ion-item lines="full">
+      <ion-item lines="full" routerLink="/tabs/user-perfil/{{user.key}}">
         <ion-avatar slot="start">
           <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
         </ion-avatar>

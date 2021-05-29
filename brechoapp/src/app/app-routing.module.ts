@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'endereco-list',
     loadChildren: () => import('./pages/endereco-list/endereco-list.module').then( m => m.EnderecoListPageModule)
   },
+  {
+    path: 'user-perfil',
+    loadChildren: () => import('./pages/user-perfil/user-perfil.module').then( m => m.UserPerfilPageModule)
+  },
 
  
 
