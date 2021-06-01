@@ -12,23 +12,29 @@
   <!-- mudar as informaçoes do jeito que queremos -->
   <ion-list>
 
+    <ion-item lines="none">
+      <img src="assets/perfil.png" alt="">
+    </ion-item>
+
     <ion-item>
-      <ion-labelimg>Pokémon Yellow</ion-label>
+      <ion-label>Nome: {{user.name}}</ion-label>
     </ion-item>
 
 
     <ion-item>
-      <ion-labelimg>Pokémon Yellow</ion-label>
+      <ion-label>E-mail: {{user.email}}</ion-label>
     </ion-item>
-
-
-
-    <ion-item>
-      <ion-labelimg>Pokémon Yellow</ion-label>
-    </ion-item>
-
-
-
 
   </ion-list>
+
+<!---botao endereço-->
+    <ion-button routerLink="/tabs/endereco-add/{{key}}">
+      <ion-icon name="map-outline"></ion-icon>
+    </ion-button>
+    
+</ion-content>
+
+
+
+
 

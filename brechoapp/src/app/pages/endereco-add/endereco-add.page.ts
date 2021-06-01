@@ -13,7 +13,7 @@ import { Endereco } from '../../models/endereco';
 export class EnderecoAddPage implements OnInit {
 
   endereco: Endereco = new Endereco();
-  key: string = null;
+  userkey: string = null;
 
   constructor(
     private storage: Storage,
@@ -24,8 +24,8 @@ export class EnderecoAddPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.key = this.activadeRouter.snapshot.paramMap.get('key');
-    this.getUser(this.key)
+    this.userkey = this.activadeRouter.snapshot.paramMap.get('key');
+    //this.getEndereco(this.key)
   }
 
   async getUser(key) {
@@ -68,8 +68,8 @@ export class EnderecoAddPage implements OnInit {
   salvar() {
     try {
       this.msg.presentLoading();
-      if (this.key) {
-        this.enderecoService.update(this.endereco, this.key).then(
+      if (this.userkey) {
+        this.enderecoService.update(this.endereco, this.userkey).then(
           res => {
             console.log('Dados Salvos firebase...', res);
             this.msg.dismissLoading();
@@ -109,7 +109,7 @@ export class EnderecoAddPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
-    if (this.getUser(this.key)) {
+    if (this.getUser(this.userkey)) {
       //setTimeout(() => {
       console.log('Async operation has ended');
       event.target.complete();

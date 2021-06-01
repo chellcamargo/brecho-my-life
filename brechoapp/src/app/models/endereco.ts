@@ -9,4 +9,6 @@ export class Endereco {
     uf: string;
 
     erro:boolean = false;
+
+    userkey: string;
 }
