@@ -24,6 +24,7 @@ export class EnderecoService {
     return this.firedb.collection<Endereco>("enderecos").add(
       {
         
+        userkey:endereco.userkey,
         bairro : endereco.bairro,
         cep: endereco.cep,
         logradouro : endereco.logradouro,
