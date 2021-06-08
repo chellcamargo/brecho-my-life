@@ -75,7 +75,7 @@ export class EnderecoAddPage implements OnInit {
             this.msg.dismissLoading();
             this.msg.presentAlert('Alerta', 'Endereço cadastrado.');
             this.endereco = new Endereco();
-            this.router.navigate(['']);
+            this.router.navigate(['/tabs/user-perfil',this.userkey]);
           },
           error => {
             console.error("Erro ao salvar.", error);
