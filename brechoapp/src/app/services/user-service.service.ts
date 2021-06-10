@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { map } from 'rxjs/operators';
-import { AngularFireAuth } from "@angular/fire/auth";
 
 @Injectable({
   providedIn: "root"
@@ -11,29 +10,17 @@ import { AngularFireAuth } from "@angular/fire/auth";
 export class UserServiceService {
   constructor(
     private http: HttpClient,
-    private firedb:AngularFirestore,
-    private auth : AngularFireAuth
+    private firedb:AngularFirestore
   ) { }
 
-  pegaCEP(cep: string) {
-    var local: string = "https://viacep.com.br/ws/" + cep + "/json";
-    return this.http.get<User>(local);
-  }
-
-  add(usuario:User){
-    return this.auth.createUserWithEmailAndPassword(usuario.email,usuario.senha).then(
-
-      (res) => {
-
-    return this.firedb.collection<User>("usuarios").doc(res.user.uid).set({
-      
+    add(usuario:User){
+    return this.firedb.collection<User>("usuarios").add(
+      {
         nome : usuario.nome,
         email: usuario.email,
-        senha: null,
-      });
-     },
+        senha: usuario.senha
+      }
     )
-      erro=>}
   }
 
   getAll(){

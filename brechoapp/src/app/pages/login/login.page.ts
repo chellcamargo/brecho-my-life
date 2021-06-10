@@ -9,30 +9,25 @@ import { MsgService } from 'src/app/services/msg.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
   email: string = '';
   senha: string = '';
 
-  constructor( 
-    private auth:AngularFireAuth,
+  constructor(
+    private auth: AngularFireAuth,
     private router: Router,
     private msg: MsgService
-    ) { }
+  ) {}
 
   ngOnInit() {}
 
-    LoginPage() {
-
-   this.auth.signInWithEmailAndPassword(this.email,this.senha).then(
-     res=> {
-       this.router.navigate(['']);
-
-     },
-     error=>{
-       this.msg.presentAlert("Erro","Usuário não encontrado!")
-
-     }
-   )
+  login() {
+    this.auth.signInWithEmailAndPassword(this.email, this.senha).then(
+      res=>{
+        this.router.navigate(['']);
+      },
+      error=>{
+        this.msg.presentAlert("Erro","Usuário não encontrado!");
+      }
+    )
   }
-
 }
