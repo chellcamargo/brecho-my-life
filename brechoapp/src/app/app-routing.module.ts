@@ -9,6 +9,22 @@ const routes: Routes = [
     path: 'user-list',
     loadChildren: () => import('./pages/user-list/user-list.module').then( m => m.UserListPageModule)
   },
+  {
+    path: 'endereco-add',
+    loadChildren: () => import('./pages/endereco-add/endereco-add.module').then( m => m.EnderecoAddPageModule)
+  },
+  {
+    path: 'endereco-list',
+    loadChildren: () => import('./pages/endereco-list/endereco-list.module').then( m => m.EnderecoListPageModule)
+  },
+  {
+    path: 'user-perfil',
+    loadChildren: () => import('./pages/user-perfil/user-perfil.module').then( m => m.UserPerfilPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 
  
 

@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Entrar na Conta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]='email' name='email' required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]='senha' name="senha" required #s="ngModel" minlength="6">
+      </ion-input>
+    </ion-item>
+  
+    <ion-button expand="block" type="submit" (click)="login()">Entrar</ion-button>
+    <ion-button expand="block" type="reset" color="danger">Cancelar</ion-button>
+  
+  </ion-content>

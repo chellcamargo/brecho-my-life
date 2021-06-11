@@ -27,6 +27,17 @@ const routes: Routes = [
         path: 'userAdd/:key',
         loadChildren: () => import('../pages/user-add/user-add.module').then( m => m.UserAddPageModule)
       },
+
+      {
+        path: 'user-perfil/:key',
+        loadChildren: () => import('../pages/user-perfil/user-perfil.module').then( m => m.UserPerfilPageModule)
+      },
+
+      {
+        path: 'endereco-add/:key',
+        loadChildren: () => import('../pages/endereco-add/endereco-add.module').then( m => m.EnderecoAddPageModule)
+      },
+
       {
         path: '',
         redirectTo: '/tabs/tab1',

@@ -46,28 +46,6 @@ export class UserAddPage implements OnInit {
     }
   }
 
-  buscaCEP() {
-    this.userService.pegaCEP(this.user.cep).subscribe(
-      res => {
-        console.log(res);
-        if (res.erro) {
-          this.msg.presentToast("CEP não localizado!");
-        } else {
-          //this.user = res;
-          //this.user.cep = res.cep;
-          this.user.logradouro = res.logradouro;
-          this.user.localidade = res.localidade;
-          this.user.bairro = res.bairro;
-          this.user.uf = res.uf;
-        }
-      },
-      error => {
-        console.error(error)
-      }
-    )
-  }
-
-
   salvar() {
     try {
       this.msg.presentLoading();
