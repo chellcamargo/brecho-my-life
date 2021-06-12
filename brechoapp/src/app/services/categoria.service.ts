@@ -1,7 +1,8 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
-import {categoria} from "../"
 import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
+import { Categoria } from '../models/categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class CategoriaService {
 
   add(categoria:Categoria){
     return this.firedb.collection<Categoria>("categoria").add(
-      key: categoria.key,
-      nome : categoria.nome,
-      {
+     { 
+       key: categoria.key,
+      nome : categoria.nome, 
         
         
       }
@@ -39,14 +40,14 @@ export class CategoriaService {
   }
 
   get(key){
-    return this.firedb.collection<categoria>("enderecos").doc(key).valueChanges();
+    return this.firedb.collection<Categoria>("categoria").doc(key).valueChanges();
   }
 
-  update(endereco:Endereco, key:string){
-    return this.firedb.collection<Endereco>("enderecos").doc(key).update(endereco);
+  update(categoria:Categoria, key:string){
+    return this.firedb.collection<Categoria>("categoria").doc(key).update(categoria);
   }
 
   delete(key){
-    return this.firedb.collection("enderecos").doc(key).delete();
+    return this.firedb.collection("categoria").doc(key).delete();
   }
 }

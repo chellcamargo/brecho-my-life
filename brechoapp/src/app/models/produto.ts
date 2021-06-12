@@ -9,6 +9,7 @@ export class Produto {
     Peso: Number;
     Desconto: Number;
     Ativo: Boolean = true;
+  nome: string;
     
 	
 
