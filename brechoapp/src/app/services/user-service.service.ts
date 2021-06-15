@@ -17,10 +17,10 @@ export class UserServiceService {
     return this.firedb.collection<User>("serviço").add(
       {
         userkey: usuario.userkey,
-        Nome: usuario.Nome,
-        Telefone: usuario.Telefone,
-        Cpf: usuario.Cpf,
-        Email: usuario.Email,
+        nome: usuario.nome,
+        telefone: usuario.telefone,
+        cpf: usuario.cpf,
+        email: usuario.email,
         ativo: usuario.ativo,
 
       }
