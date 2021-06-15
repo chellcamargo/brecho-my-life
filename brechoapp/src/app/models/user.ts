@@ -1,10 +1,10 @@
 //cliente
 export class User {
     userkey: string;
-    Nome: String;
-    Telefone: String;
-    Cpf: String;
-    Email: String;
+    nome: String;
+    telefone: String;
+    cpf: String;
+    email: String;
     ativo: boolean = true;
 	
 
