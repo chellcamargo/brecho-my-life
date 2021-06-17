@@ -1,6 +1,6 @@
-<ion-header>
+<ion-header color="warning">
     <ion-toolbar>
-        <ion-title>Cadastro Usuário</ion-title>
+        <ion-title color="warning">Cadastro Usuário</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -17,6 +17,16 @@
         <ion-item>
             <ion-label position="floating">Nome</ion-label>
             <ion-input type="text" [(ngModel)]='user.nome' name='nome' required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Cpf</ion-label>
+            <ion-input type="text" [(ngModel)]='user.cpf' name='cpf' required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Telefone</ion-label>
+            <ion-input type="text" [(ngModel)]='user.telefone' name='telefone' required></ion-input>
         </ion-item>
 
         <ion-item>
@@ -40,7 +50,7 @@
 
         <!-- <ion-item> -->
             <ion-button expand="block" type="submit" [disabled]="fc.invalid || (s.value != c.value)">Salvar</ion-button>
-            <ion-button expand="block" type="reset" color="danger">Cancelar</ion-button>
+            <ion-button expand="block" type="reset" color="danger"  routerLink="/">Cancelar</ion-button>
         <!-- </ion-item> -->
     </form>
 </ion-content>
