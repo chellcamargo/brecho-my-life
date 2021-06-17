@@ -1,13 +1,10 @@
 //cliente
 export class User {
-    userkey: string;
-    nome: String;
-    telefone: String;
-    cpf: String;
-    email: String;
+    userkey: string = null;
+    nome: string;
+    telefone: string;
+    cpf: string;
+    email: string;
+    senha: string;
     ativo: boolean = true;
-	
-
-    
-   
 }
