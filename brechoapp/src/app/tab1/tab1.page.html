@@ -6,13 +6,53 @@
             Brechó My Life - Entre e Boas Compras
         </ion-title>
     </ion-toolbar>
+
+
+<div class="imgs">
+    <ion-slides pager="true" [options]="slide" >
+        <ion-slide class="slide-1" >
+            <img src="assets/kanui.jpeg"width=auto height=auto >
+        </ion-slide>
+        
+        <ion-slide class="slide-2">
+            <img src="assets/kanui2.jpg"width=auto height=auto>
+        </ion-slide>
+    
+        <ion-slide class="slide-3">
+            <img src="assets/kanui3.jpg"width=auto height=auto>
+        </ion-slide>
+        
+      </ion-slides>
+      
+    </div>
+        <!-- Barra de pesquisa -->
+        <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
+    <div>
+
+        <!-- Item as a Button -->
+    <ion-item button (click)="buttonClick()"  color="secondary">
+        <ion-label>
+        MASCULINO
+        </ion-label>
+    </ion-item>
+
+        <!-- Item as a Button -->
+    <ion-item button (click)="buttonClick()"  color="primary">
+        <ion-label>
+            FEMININO
+        </ion-label>
+    </ion-item>
+</div>
     
 </ion-header>
 
+
+
+
 <ion-content [fullscreen]="true">
-  
-  
-      
+
 
 </ion-content>
+
+
 
