@@ -16,7 +16,6 @@ export class EnderecoAddPage implements OnInit {
   userkey: string = null;
 
   constructor(
-    private storage: Storage,
     private enderecoService: EnderecoService,
     protected msg: MsgService,
     private router: Router,
