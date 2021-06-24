@@ -54,6 +54,22 @@ export class ProdutoService {
     )
   }
 
+  buscaGetAll(campo:string,valor:string){//campo=genero , valor:masc
+    //return this.firedb.collection<User>("deposito").valueChanges()
+    return this.firedb.collection<ProdutoService>("produto",query=>query.where(campo,"==",valor)).snapshotChanges()
+    .pipe(
+      map(dados =>
+        dados.map(
+          d => ({
+            key: d.payload.doc.id, ...d.payload.doc.data()
+          })
+        )
+      )
+    )
+  }
+
+  
+
   get(key){
     return this.firedb.collection<Produto>("produto").doc(key).valueChanges();
   }
