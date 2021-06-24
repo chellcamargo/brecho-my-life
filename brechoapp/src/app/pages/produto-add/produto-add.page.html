@@ -1,9 +1,58 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>produto-add</ion-title>
+    <ion-title>Cadastro de Produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <!-- Default Refresher -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <form #fc="ngForm" (ngSubmit)="salvar(fc)">
+
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]='produto.nome' name='nome' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descricao</ion-label>
+      <ion-input type="text" [(ngModel)]='produto.descricao' name='descricao' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input type="number" [(ngModel)]='produto.valor' name='valor' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Quantidade</ion-label>
+      <ion-input type="number" [(ngModel)]='produto.quantidade' name='quantidade' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cor</ion-label>
+      <ion-input type="number" [(ngModel)]='produto.cor' name='cor' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Peso</ion-label>
+      <ion-input type="number" [(ngModel)]='produto.peso' name='peso' required></ion-input>
+    </ion-item>
+
+    
+
+    <ion-item>
+      <ion-label>Ativo</ion-label>
+      <ion-toggle [(ngModel)]="produto.ativo" name="ativo"></ion-toggle>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="fc.invalid">Salvar</ion-button>
+    <ion-button expand="block" type="reset" color="danger" routerLink="/tabs/produto-list">Cancelar
+    </ion-button>
+
+  </form>
 </ion-content>
