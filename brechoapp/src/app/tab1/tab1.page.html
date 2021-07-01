@@ -1,5 +1,3 @@
-
-
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
@@ -7,54 +5,103 @@
         </ion-title>
     </ion-toolbar>
 
+</ion-header>
+<ion-content [fullscreen]="true">
 
-<div class="imgs">
-    <ion-slides pager="true" [options]="slide" >
-        <ion-slide class="slide-1" >
-            <img src="assets/kanui.jpeg"width=auto height=auto >
-        </ion-slide>
-        
-        <ion-slide class="slide-2">
-            <img src="assets/kanui2.jpg"width=auto height=auto>
-        </ion-slide>
-    
-        <ion-slide class="slide-3">
-            <img src="assets/kanui3.jpg"width=auto height=auto>
-        </ion-slide>
-        
-      </ion-slides>
-      
+    <div class="imgs">
+        <ion-slides pager="true" [options]="slide">
+            <ion-slide class="slide-1">
+                <img src="assets/kanui.jpeg" width=auto height=auto>
+            </ion-slide>
+
+            <ion-slide class="slide-2">
+                <img src="assets/kanui2.jpg" width=auto height=auto>
+            </ion-slide>
+
+            <ion-slide class="slide-3">
+                <img src="assets/kanui3.jpg" width=auto height=auto>
+            </ion-slide>
+
+        </ion-slides>
+
     </div>
-        <!-- Barra de pesquisa -->
-        <ion-searchbar placeholder="Search Favorites">
-        </ion-searchbar>
-        
+    <!-- Barra de pesquisa -->
+    <ion-searchbar placeholder="Search Favorites">
+    </ion-searchbar>
+
     <div>
 
         <!-- Item as a Button -->
-    <ion-item button (click)="listaproduto('masculino')" color="secondary">
-        <ion-label>
-        MASCULINO
-        </ion-label>
-    </ion-item>
+        <ion-item button (click)="listaproduto('masculino')" color="secondary">
+            <ion-label>
+                MASCULINO
+            </ion-label>
+        </ion-item>
 
         <!-- Item as a Button -->
-    <ion-item button (click)="listaproduto('feminino')" color="primary">
-        <ion-label>
-            FEMININO
-        </ion-label>
-    </ion-item>
-</div>
-    
-</ion-header>
+        <ion-item button (click)="listaproduto('feminino')" color="primary">
+            <ion-label>
+                FEMININO
+            </ion-label>
+        </ion-item>
+    </div>
 
 
+    <ion-grid>
+        <ion-row>
+          <ion-col size="6" > 
+    <ion-card>
+        <img src="assets/calca.png" />
+        <ion-item button (click)="buttonClick()" color="secondary">
+            <ion-label>
+                Calça Masculina R$:40,00
+            </ion-label>
+        </ion-item>
+    </ion-card>
+   </ion-col>
+
+   <ion-col size="6" > 
+    <ion-card>
+        <img src="assets/saia.jfif" />
+        <ion-item button (click)="buttonClick()" color="secondary">
+            <ion-label>
+                Saia R$:25,00
+            </ion-label>
+        </ion-item>
+
+        <ion-col size="6" > 
+        <ion-card>
+            <img src="assets/camisa.jpg" />
+            <ion-item button (click)="buttonClick()" color="secondary">
+                <ion-label>
+                    Camisa Masculina R$:20,00
+                </ion-label>
+            </ion-item>
+        </ion-card>
+        </ion-col> 
+
+        <ion-col size="6" > 
+        <ion-card>
+            <img src="assets/jaqueta2.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                    Jaqueta Jeans Femina    R$:45,00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+          </ion-col>
 
 
-<ion-content [fullscreen]="true">
+        </ion-card>
+        </ion-col>
+        </ion-row>
+
+        </ion-grid>
+
+        
+  
+
 
 
 </ion-content>
-
-
-
