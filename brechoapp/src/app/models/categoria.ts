@@ -1,5 +1,5 @@
 export class Categoria {
-    key: string;
+    categoriakey: string;
     nome: string;
 
 }

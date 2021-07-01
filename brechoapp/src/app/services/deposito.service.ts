@@ -19,7 +19,7 @@ export class DepositoService {
   add(deposito:Deposito){
     return this.firedb.collection<Deposito>("deposito").add(
      { 
-      key: deposito.key,
+      depositokey: deposito.depositokey,
       nome: deposito.nome, 
         
         

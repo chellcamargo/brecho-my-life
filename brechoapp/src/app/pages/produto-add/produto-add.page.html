@@ -35,7 +35,7 @@
 
     <ion-item>
       <ion-label position="floating">Cor</ion-label>
-      <ion-input type="number" [(ngModel)]='produto.cor' name='cor' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.cor' name='cor' required></ion-input>
     </ion-item>
 
     <ion-item>
@@ -45,30 +45,35 @@
 
     <ion-item>
       <ion-label position="floating">Imagem</ion-label>
-      <ion-input type="string" [(ngModel)]='produto.imagem' name='imagem' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.imagem' name='imagem' required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Genero</ion-label>
-      <ion-input type="string" [(ngModel)]='produto.genero' name='genero' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.genero' name='genero' required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-input type="text" [(ngModel)]='produto.categoria' name='categoria' required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Deposito</ion-label>
-      <ion-input type="string" [(ngModel)]='produto.deposito' name='deposito' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.deposito' name='deposito' required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Tamanho</ion-label>
-      <ion-input type="string" [(ngModel)]='produto.tamanho' name='tamanho' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.tamanho' name='tamanho' required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Desconto</ion-label>
-      <ion-input type="string" [(ngModel)]='produto.desconto' name='desconto' required></ion-input>
+      <ion-input type="text" [(ngModel)]='produto.desconto' name='desconto' required></ion-input>
     </ion-item>
 
-    
+
 
     <ion-item>
       <ion-label>Ativo</ion-label>

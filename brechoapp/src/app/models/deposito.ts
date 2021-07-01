@@ -1,4 +1,4 @@
 export class Deposito {
-    key: string;
+    depositokey: string;
     nome: string;
 }

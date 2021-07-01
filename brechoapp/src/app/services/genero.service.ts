@@ -20,7 +20,7 @@ export class GeneroService {
   add(genero:Genero){
     return this.firedb.collection<Genero>("genero").add(
      { 
-      key: genero.key,
+      generokey: genero.generokey,
       nome: genero.nome, 
         
         

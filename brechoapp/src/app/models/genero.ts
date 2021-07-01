@@ -1,4 +1,4 @@
 export class Genero {
-    key: string;
+    generokey: string;
     nome: string;
 }

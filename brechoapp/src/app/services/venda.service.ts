@@ -4,11 +4,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Venda } from '../models/venda';
 
-
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,10 +17,10 @@ export class VendaService {
   add(venda:Venda){
     return this.firedb.collection<Venda>("venda").add(
      { 
-        key: venda.key,
-        Localização: venda.Localização,
-        Valor: venda.Valor,
-        Produto: venda.Produto,        
+        vendakey: venda.vendakey,
+        localizacao: venda.localizacao,
+        valor: venda.valor,
+        produto: venda.produto,        
       }
     )
   }

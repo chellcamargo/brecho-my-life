@@ -9,9 +9,12 @@
 
 <!-- Segment in a toolbar -->
 <ion-toolbar>
+  <ion-searchbar placeholder="Search Favorites">
+  </ion-searchbar>
     <ion-segment (ionChange)="segmentChanged($event)" color="secondary">
       <ion-segment-button value="camera">
-        <ion-icon name="man-outline"></ion-icon>
+        <ion-icon name="man-outline" >
+        </ion-icon>
       </ion-segment-button>
       <ion-segment-button value="bookmark">
         <ion-icon name="woman-outline"></ion-icon>
