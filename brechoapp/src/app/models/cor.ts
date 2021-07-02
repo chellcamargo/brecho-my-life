@@ -1,4 +1,4 @@
 export class Cor {
-  key: any;
+  corkey: any;
   nome: any;
 }

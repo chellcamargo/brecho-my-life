@@ -1,4 +1,4 @@
 export class Tamanho {
-    key: string;
+    tamanhokey: string;
     nome: string;
 }

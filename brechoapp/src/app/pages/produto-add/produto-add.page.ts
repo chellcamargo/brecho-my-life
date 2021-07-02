@@ -24,7 +24,9 @@ export class ProdutoAddPage implements OnInit {
 
   ngOnInit() {
     this.key = this.activadeRouter.snapshot.paramMap.get('key');
-    this.getProduto(this.key)
+    if(this.key){
+          this.getProduto(this.key)
+    }
   }
 
   async getProduto(key) {
@@ -75,8 +77,7 @@ export class ProdutoAddPage implements OnInit {
           }
         )
       }
-    } catch (error) {
-      
+    } catch (error) {      
       this.msg.dismissLoading();
       this.msg.presentAlert("Error", "Não foi possivel conectar.");
     }

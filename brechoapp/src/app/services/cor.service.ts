@@ -18,7 +18,7 @@ export class CorService {
   add(cor:Cor){
     return this.firedb.collection<Cor>("cor").add(
      { 
-      key: cor.key,
+      corkey: cor.corkey,
       nome: cor.nome, 
         
         

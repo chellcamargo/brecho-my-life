@@ -1,10 +1,26 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
-            Brechó My Life - Acessórios
+            Brechó My Life - A
         </ion-title>
     </ion-toolbar>
 </ion-header>
+
+
+<!-- Segment in a toolbar -->
+<ion-toolbar>
+  <ion-searchbar placeholder="Search Favorites">
+  </ion-searchbar>
+    <ion-segment (ionChange)="segmentChanged($event)" color="secondary">
+      <ion-segment-button value="camera">
+        <ion-icon name="man-outline" >
+        </ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark">
+        <ion-icon name="woman-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 
 
 
@@ -12,9 +28,10 @@
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
         <ion-toolbar>
-            <ion-title size="large">Tab 2</ion-title>
+            
         </ion-toolbar>
     </ion-header>
+
 
     <div class="tab2">
         <ion-card>
@@ -31,7 +48,7 @@
             <img src="assets/saia.jfif"/>
             <ion-item button (click)="buttonClick()"  color="secondary">
                 <ion-label>
-               Saia
+               Saia           R$:25,00
                 </ion-label>
               </ion-item>
             
@@ -41,7 +58,7 @@
             <img src="assets/camisa.jpg"/>
             <ion-item button (click)="buttonClick()"  color="secondary">
                 <ion-label>
-                Camisa Masculina
+                Camisa Masculina        R$:20,00
                 </ion-label>
               </ion-item>
             
@@ -52,7 +69,7 @@
             <ion-item button (click)="buttonClick()"  color="secondary">
                 <ion-label>
                 
-                    Moletom masculino             
+                    Moletom masculino       R$:45,00        
                 </ion-label>
               </ion-item>
           </ion-card>
@@ -62,7 +79,7 @@
             <ion-item button (click)="buttonClick()"  color="secondary">
                 <ion-label>
                 
-                    Camisa Feminina       
+                    Camisa Feminina         R$:15,00
                 </ion-label>
               </ion-item>
           </ion-card>
@@ -72,7 +89,59 @@
             <ion-item button (click)="buttonClick()"  color="secondary">
                 <ion-label>
                 
-                    Camisa Jeans Masculina  
+                    Bermuda Jeans Masculina     R$:40,00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+
+          <ion-card>
+            <img src="assets/jaqueta2.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                    Jaqueta Jeans Femina    R$:45,00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+
+          <ion-card>
+            <img src="assets/camisapreta.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                    Camisa Preta masculina  R$:20,00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+
+          <ion-card>
+            <img src="assets/saia2.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                    Saia        R$:25,00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+
+          
+          <ion-card>
+            <img src="assets/fem2.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                   Camisa Feminina         R$:25;00
+                </ion-label>
+              </ion-item>
+          </ion-card>
+
+
+          <ion-card>
+            <img src="assets/fem3.jpg"/>
+            <ion-item button (click)="buttonClick()"  color="secondary">
+                <ion-label>
+                
+                    Macaquinho Jeans       R$:59;99
                 </ion-label>
               </ion-item>
           </ion-card>
@@ -80,8 +149,7 @@
           
         
         </div>
-        
-        
+
 
 
 
