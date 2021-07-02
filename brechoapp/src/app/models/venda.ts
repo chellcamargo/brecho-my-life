@@ -1,8 +1,9 @@
+import { Produto } from 'src/app/models/produto';
 export class Venda {
-    key: string;
-    Localização: String;
-    Valor: Number;
-    Produto: string;
+    vendakey: string;
+    localizacao: String;
+    valor: Number;
+    produto: Produto[]=[];
 	
 
 }

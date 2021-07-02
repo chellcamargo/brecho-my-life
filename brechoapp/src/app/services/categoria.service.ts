@@ -17,7 +17,7 @@ export class CategoriaService {
   add(categoria:Categoria){
     return this.firedb.collection<Categoria>("categoria").add(
      { 
-       key: categoria.key,
+      categoriakey : categoria.categoriakey,
       nome : categoria.nome, 
         
         

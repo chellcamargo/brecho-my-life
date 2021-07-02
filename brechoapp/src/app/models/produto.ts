@@ -1,16 +1,13 @@
 export class Produto {
-    key: string;
-    genero: string;
-    categoria: string;
-    Descrição: string;
-    Valor: string;
-    Quantidade: number;
-    imagem: string;
-    Peso: Number;
-    Desconto: Number;
-    Ativo: Boolean = true;
+  produtokey: string = null;
+  genero: string;
+  categoria: string;
+  descricao: string;
+  valor: string;
+  quantidade: number;
+  imagem: string;
+  peso: number;
+  desconto: number;
+  ativo: boolean = true;
   nome: string;
-    
-	
-
 }
